@@ -11,6 +11,12 @@ dict[1]=$r1
 dict[2]=$r2
 dict[3]=$r3
 dict[4]=$r4
+count=0
+for key in "${dict[@]}"
+do
+	arr[((count))]=$key
+	((count++))
+done
 
-echo ${dict[@]}
+echo ${arr[@]}
 
