@@ -19,4 +19,19 @@ do
 done
 
 echo ${arr[@]}
+echo ${#arr[@]}
 
+a=${#arr[@]}
+for((i=0;i<$a;i++))
+do
+	for((j=0;j<$(($a-$i-1));j++))
+	do
+		if((${arr[j]} > ${arr[$((j+1))]}))
+		then
+		temp=${arr[j]}
+		arr[$j]=${arr[$((j+1))]}
+		arr[$((j+1))]=$temp
+		fi
+	done
+done
+echo ${arr[@]}
